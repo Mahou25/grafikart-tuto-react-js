@@ -14,19 +14,17 @@ import { Input } from './components/forms/input';
   ]
 function App() {
   return (
-    <>
-      return <div>
+      <div className='container my-3'>
         <SearchBar/>
       </div>
-    </>
   )
 }
 
 function SearchBar() {
   return <div>
     <div className='mb-3'>
-      <Input value="" onChange = {()=>null} className=""/>
-      <Checkbox checked={false} onChange={()=>null} label={"N\'afficher que les produits en stock"} />
+      <Input value="" onChange = {()=>null} placeholder="Rechercher..." />
+      <Checkbox id="stocked" checked={false} onChange={()=>null} label={"N'afficher que les produits en stock"} />
     </div>
   </div>
 }
