@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css'
@@ -10,6 +11,35 @@ function App() {
 // const handleChange = (e) => {
 //   setFirstName(e.target.value)
 // }
+
+
+
+// 1. e → l'événement
+
+// Quand tu écris quelque chose comme :
+
+// <input onChange={(e) => console.log(e.target.value)} />
+
+
+// e est l'objet événement qui est automatiquement passé à la fonction onChange.
+
+// Il contient des informations sur l'événement (où il a eu lieu, quel type, etc.).
+
+// 2. e.target → la cible de l'événement
+
+// target est une propriété de l'objet e.
+
+// e.target représente l’élément du DOM (par ex. un <input>, un bouton, une div…) sur lequel l’événement a été déclenché.
+
+// Dans l’exemple ci-dessus, e.target désigne l’élément <input>.
+
+// 3. e.target.value → la valeur de l’élément
+
+// value est une propriété de certains éléments HTML comme <input>, <textarea>, etc.
+
+// Elle contient la valeur actuelle du champ (par exemple, ce que l’utilisateur tape dans un champ texte).
+
+
 
 // const reset = () =>{
 //   setFirstName('')
