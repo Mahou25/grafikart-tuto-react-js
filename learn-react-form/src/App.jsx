@@ -47,6 +47,9 @@ function App() {
 
 // console.log('render')
 
+//Le log au dessus nous permet simplement de déduire l'inconvenient d'utiliser un champs controlé par react
+//Lorsque le champs est controlé par react il suffit de presser votre clavier et automatiquement react va appeler le setter qui va rendre une fois de plus le composant. 
+
 //   return (
 //     <>
 //      <form className="" action="" method="">
