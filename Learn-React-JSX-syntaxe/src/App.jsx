@@ -27,6 +27,7 @@ function App() {
   </>;
 }
 
+// On essaie le fork
 function Title({color, children, hidden, ...props}) {
   if (hidden) {
     alert("The title is hidden") //une condition sur la propriété hidden
