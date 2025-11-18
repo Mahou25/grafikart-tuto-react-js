@@ -15,8 +15,8 @@ function App() {
 
   return <>
   {/* {showTitle ? <h1 onClick={handleClick} id="title" style={style} className="title">{title}</h1> : <p></p>} */}
-    {/* <Title color = "red" hidden >Mon agréable composant</Title> */}
-    <Title color = "red" id="monid" className="maclass" data-demo="demo" >Mon agréable composant</Title>
+    <Title color = "red" hidden >Mon agréable composant</Title>
+    {/* <Title color = "red" id="monid" className="maclass" data-demo="demo" >Mon agréable composant</Title> */}
     <input type="text"/>
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry, widely used since the 1500s. It originated from a scrambled section of "De Finibus Bonorum et Malorum," a work by Cicero written in 45 BC. This placeholder text is commonly used in design and publishing to fill space and give an impression of how the final content will look.
@@ -31,7 +31,7 @@ function App() {
 function Title({color, children, hidden, ...props}) {
   if (hidden) {
     alert("The title is hidden") //une condition sur la propriété hidden
-    return null
+    // return null
   }
 
   console.log(hidden)//Deux fois dans la console ? explication

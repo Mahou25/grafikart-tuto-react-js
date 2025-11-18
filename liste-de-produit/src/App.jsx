@@ -21,7 +21,7 @@ function App() {
     if (showStockedOnly && !product.stocked) {
        return false
     }
-    if (search && !product.name.includes(search)) {
+    if (search && !product.name.toLowerCase().includes(search.toLowerCase())) {
        return false
     }
     return true
@@ -49,7 +49,7 @@ function SearchBar({showStockedOnly, onStockedOnlyChange, search, onSearchChange
       id="stocked" 
       checked={showStockedOnly} 
       onChange={onStockedOnlyChange} 
-      label=""
+      label="N'aficher que les produits en stocks"
     />
   </div>
 }

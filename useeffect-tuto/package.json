@@ -1,5 +1,5 @@
 {
-  "name": "formulaire-avec-apercu-en-temps-reel-tp-avec-react",
+  "name": "useeffect-tuto",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -24,7 +24,9 @@
     "globals": "^16.5.0",
     "vite": "npm:rolldown-vite@7.2.2"
   },
-  "overrides": {
-    "vite": "npm:rolldown-vite@7.2.2"
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:rolldown-vite@7.2.2"
+    }
   }
 }
