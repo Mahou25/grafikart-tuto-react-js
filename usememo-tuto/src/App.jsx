@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+
+import { useState } from 'react';
+
+import { Input } from './components/forms/Input.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [firstname, setFirstname] = useState('John');
+  const [password, setPassword] = useState('MotDePasse');
+  // const security = passwordSecurity(password);
+  const security = useMemo(()=>{
+    console.log('hello')
+    return passwordSecurity(password)
+  }, [password]);
 
   return (
-    <>
+    <div className="container my-3 vstack gap-2">
+      <Input
+        label="Nom d'utilisateur"
+        value={firstname}
+        onChange={setFirstname}
+      />
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Input
+          label="Password"
+          type="password"
+          value={password}
+          onChange={setPassword}
+        />
+        {/* Sécurité : {security} */}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
+
+
+function passwordSecurity(password) {
+  // Fausse lenteur
+  let startTime = performance.now();
+  while (performance.now() - startTime < 500) {
+  }
+
+  if (password.length < 3) {
+    return 'Faible';
+  } else if (password.length < 6) {
+    return 'Moyen';
+  }
+  return 'Fort';
+}
+
+
 
 export default App
