@@ -1,8 +1,11 @@
 import './App.css';
 
-import { useRef } from 'react';
+import {
+  useRef,
+  useState,
+} from 'react';
 
-import { Input } from '../../usememo-tuto/src/components/Input';
+import { Input } from './components/Input';
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -58,9 +61,9 @@ import { Input } from '../../usememo-tuto/src/components/Input';
 // }
 
 function App() {
-  const ref = useRef()
+  const ref = useRef(null)
   console.log('App',ref)
-  // const [prefix, setPrefix]=useState('')
+  const [prefix, setPrefix]=useState('')
   // prefixRef.current = prefix
   
   // useEffect(()=>{
@@ -73,7 +76,8 @@ function App() {
   //   }, []);
 
   return <div>
-    <Input inputRef={ref} label="prefix"  />
+    <Input ref={ref} label="prefix" value="prefix" on={setPrefix}  />
+    {prefix.length ===0 && <div ref={ref}>hello</div> }
   </div>
 
 }
