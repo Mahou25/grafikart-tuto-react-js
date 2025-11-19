@@ -1,6 +1,9 @@
 import './App.css';
 
-import { useState } from 'react';
+import {
+  useEffect,
+  useState,
+} from 'react';
 
 import { Checkbox } from './components/Checkbox';
 import { Input } from './components/Input';
@@ -37,17 +40,27 @@ function EditTitle() {
   //   }
   // },[]);
 
+  // document.title=title 
+
+  // console.log('render')
+
   useEffect(() =>{
     console.log('title')
     document.title = title
   }, [title]);
+
+  console.log('mounted')
    
   //Dans ce cas, je vous explique: le use effect donne presque le même effet sur un élément de la DOM tout comme le fait une opération 
   //directe sur l'élément de la DOM. Mais attention, rappelez vous que par exemple le code ci-dessus peut être remplacé par document.title=title mais 
   //remarquons que lorsque vous commentez le code en haut et que nous utilisons celui dans les commentaires, react ne va plus faire attention au titre 
   // seulement mais aussi aux autres éléments dans l'ardre de votre DOM actuel. mais parcontre le useEffect permet de fixer l'atention de react sur l'éssentiel.
 
+
+  
   //Qu'est ce que le useEffect ? C'est une fonction de react qui permet de créer un effet de bord lorsqu'un composant est monté
+
+
 
   // useEffect(()=>{
   //   const handler = ()=>{
@@ -59,6 +72,10 @@ function EditTitle() {
   //     window.removeEventListener('scroll', handler)
   //   }
   // }, [])
+
+
+
+  // Après un useEffect il faut souvent penser à néttoyer un evenement
 
   return <div className="vstack gap-2">
     <div>
